@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools & Resources</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+        .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+        .fa-anchor,.fa-coffee {font-size:200px}
+        .container {
+            padding: 20px;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .tool-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .tool-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            text-decoration: none; 
+            color: inherit; 
+        }
+        .tool-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        .tool-card .content {
+            flex-grow: 1;
+        }
+        .tool-card h3 {
+            margin: 0;
+        }
+        .tool-card .tags {
+            margin-top: 5px;
+        }
+        .tool-card .tags span {
+            background-color: #f1f1f1;
+            border-radius: 3px;
+            padding: 5px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-purple w3-card w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-purple" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="home.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+        <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About us</a>
+        <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact us</a>
+        <a class="w3-bar-item w3-button w3-right w3-padding-large w3-hover-white w3-large w3-purple" href="javascript:void(0);" onclick="openLogin()" title="Login">Login</i></a>
+    </div>
+
+<div id="navLogin" class="w3-bar-block w3-white w3-hide w3-large" >
+    <div>
+      
+    </div>
+    <form class="w3-container w3-card-4 w3-right w3-white" style="width: 30%; z-index: -1000;" >
+
+      <p>
+      <input class="w3-input" type="text" style="width:90%" required>
+      <label>Username</label></p>
+      <p>
+      <input class="w3-input" type="password" style="width:90%" required>
+      <label>Password</label></p>
+      
+      <p>
+          <a href ="#" class="w3-text-purple"> Forgotten password</a>
+        </p>
+      <p>
+      <input id="milk" class="w3-check" type="checkbox" checked="checked">
+      <label>Stay logged in</label></p>
+        
+      <p>
+      
+      <button class="w3-button w3-section w3-teal w3-ripple"> Log in </button>
+      <a href="signup.php" class="w3-button w3-section w3-teal w3-light-grey"> Sign up </a>
+      </p>
+      
+    </form>
+  </div>    
+</div>
+
+<!-- Tools Section -->
+<div class="container" style="padding:64px 16px">
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for AI tools..." onkeyup="searchTools()">
+    </div>
+    <div id="toolList" class="tool-list">
+
+        <a href="https://chatgpt.com/" target="_blank" class="tool-card w3-hover-light-grey">
+            <img src="assets/toolcard_gpt.png" alt="Tool Image">
+            <div class="content">
+                <h3>ChatGPT <span class="verified-icon" title="Verified"><i class="fa fa-check-circle w3-text-blue"></i></span></h3>
+                <p>OpenAI's text model, delivering versatile responses.</p>
+                <div class="tags">
+                    <span>#Text</span>
+                    <span>#ImageGeneration</span>
+                </div>
+            </div>
+        </a>
+        <a href="https://microsoft.com/copilot" target="_blank" class="tool-card w3-hover-light-grey">
+            <img src="assets/toolcard_copilot.webp" alt="Tool Image">
+            <div class="content">
+                <h3>Copilot <span class="verified-icon" title="Verified"><i class="fa fa-check-circle w3-text-blue"></i></span></h3>
+                <p>Microsoft's AI assistant, providing smart and efficient support.</p>
+                <div class="tags">
+                    <span>#Text</span>
+                    <span>#ImageGeneration</span>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.sentinelone.com/" target="_blank" class="tool-card w3-hover-light-grey">
+            <img src="https://pbs.twimg.com/profile_images/1771237092716343298/SYZM0yv6_400x400.png"alt="Tool Image">
+            <div class="content">
+                <h3>SentinelOne</h3>
+                <p>AI-driven cybersecurity platform for endpoint, cloud, and data protection.</p>
+                <div class="tags">
+                    <span>#Security</span>
+                    <span>#AI</span>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.claude.ai/" target="_blank" class="tool-card w3-hover-light-grey">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/claude-ai-icon.png" alt="Tool Image">
+            <div class="content">
+                <h3>Claude AI</h3>
+                <p>Anthropic's AI model for text generation, coding, and infographics.</p>
+                <div class="tags">
+                    <span>#Text</span>
+                    <span>#Coding</span>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.gemini.ai/" target="_blank" class="tool-card w3-hover-light-grey">
+            <img src="https://imgs.search.brave.com/MbQAYCb6LpN2470tr--lviSt2k18oBI1tXPFJqK7sVQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdmdt/aXguY29tL3VwbG9h/ZHMvNmM2NzBlLWdv/b2dsZS1iYXJkLWlj/b24uc3Zn" alt="Tool Image">
+            <div class="content">
+                <h3>Gemini</h3>
+                <p>Google's AI tool for answering questions, generating text, and analyzing visuals.</p>
+                <div class="tags">
+                    <span>#Text</span>
+                    <span>#ImageAnalysis</span>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.jasper.ai/" target="_blank" class="tool-card w3-hover-light-grey">
+            <img src="https://imgs.search.brave.com/ZuCUYHhVR-mWGQHasqeeo9Lbk6_ZxFNChyA_fbNo9Vc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dC5icmFuZGZldGNo/LmlvL2lkYnJLclVa/ckYvaWRqWm5rZmkz/Xy5zdmc_dXBkYXRl/ZD0xNjQ4NDQ5MDU0/NDM0" alt="Tool Image">
+            <div class="content">
+                <h3>Jasper</h3>
+                <p>AI assistant for creating content in brand voice, writing copy, and generating marketing campaigns.</p>
+                <div class="tags">
+                    <span>#ContentCreation</span>
+                    <span>#Marketing</span>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.midjourney.com/" target="_blank" class="tool-card w3-hover-light-grey">
+            <img src="https://imgs.search.brave.com/p1c3SYEXx4lWzRbVUwvrLV4JWy5vlrMtu6HQ46BlMYQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91eHdp/bmcuY29tL3dwLWNv/bnRlbnQvdGhlbWVz/L3V4d2luZy9kb3du/bG9hZC9icmFuZHMt/YW5kLXNvY2lhbC1t/ZWRpYS9taWRqb3Vy/bmV5LWJsdWUtaWNv/bi5zdmc" alt="Tool Image">
+            <div class="content">
+                <h3>Midjourney</h3>
+                <p>Text-to-image AI tool for creating images from text prompts.</p>
+                <div class="tags">
+                    <span>#ImageGeneration</span>
+                    <span>#Art</span>
+                </div>
+            </div>
+        </a>
+        <a href="https://www.dalle3.com/" target="_blank" class="tool-card w3-hover-light-grey">
+            <img src="https://imgs.search.brave.com/uvpaZR5oQ1Bin8_fngWjj8Mip7YWPDmo5s1ELIk_pHg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL2ZyZWUv/cG5nLTI1Ni9mcmVl/LW9wZW5haS1pY29u/LWRvd25sb2FkLWlu/LXN2Zy1wbmctZ2lm/LWZpbGUtZm9ybWF0/cy0tZ3ltLXRvb2xr/aXQtYWxnb3JpdGht/LXJlaW5mb3JjZW1l/bnQtYWktYXJ0aWZp/Y2lhbC1pbnRlbGxp/Z2VuY2UtY29sb3It/cGFjay1zY2llbmNl/LXRlY2hub2xvZ3kt/aWNvbnMtMTI5MDgw/OS5wbmc_Zj13ZWJw/Jnc9MjU2" alt="Tool Image">
+            <div class="content">
+                <h3>DALL-E 3</h3>
+                <p>OpenAI's advanced AI image generation tool.</p>
+                <div class="tags">
+                    <span>#ImageGeneration</span>
+                    <span>#Art</span>
+                </div>
+            </div>
+        </a>
+        <a href="https://copilot.github.com/" target="_blank" class="tool-card w3-hover-light-grey">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Tool Image">
+            <div class="content">
+                <h3>GitHub Copilot <span class="verified-icon" title="Verified"><i class="fa fa-check-circle w3-text-blue"></i></span></h3>
+                <p>AI coding assistant for answering programming questions and providing code suggestions.</p>
+                <div class="tags">
+                    <span>#Coding</span>
+                    <span>#Development</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+    <div class="w3-xlarge w3-padding-32">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
+    function openLogin() {
+  var x = document.getElementById("navLogin");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "test");
+  }
+}
+
+    function searchTools() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let toolCards = document.getElementsByClassName('tool-card');
+
+        for (let i = 0; i < toolCards.length; i++) {
+            let toolName = toolCards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+            let tags = toolCards[i].getElementsByClassName('tags')[0].innerText.toLowerCase();
+
+            if (toolName.includes(input) || tags.includes(input)) {
+                toolCards[i].style.display = "";
+            } else {
+                toolCards[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
